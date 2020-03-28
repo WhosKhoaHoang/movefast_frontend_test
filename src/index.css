@@ -1,0 +1,180 @@
+html, body, #root, #root>div {
+  height: 100%; width: 100%; margin: 0;
+}
+
+
+.center_text {
+  position: relative;
+  /* Beware, this only gets the TL corner to the center: */
+  top: 50%;
+  left: 50%;
+  /* Shift text into proper position with this: */
+  /* (spans are inline. transform only works with
+     block-level displays) */
+  display: inline-block;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.fill_own_group {
+  width: 100%;
+  height: 100%;
+}
+
+
+#d1 {
+  background-color: blue;
+}
+
+#d2 {
+  background-color: red;
+}
+
+#d3 {
+  background-color: gray;
+}
+
+#d4 {
+  background-color: brown;
+}
+
+#d5 {
+  background-color: purple;
+}
+
+#d6 {
+  background-color: lightgreen;
+}
+
+#d7 {
+  background-color: green;
+}
+
+#d8 {
+  background-color: mediumpurple;
+}
+
+#d9 {
+  background-color: black;
+}
+
+
+/* ===== DESKTOP VIEW ===== */
+@media screen and (min-width: 600px) {
+  #group1 {
+    width: 50%;
+    height: 50%;
+    float: left;
+  }
+
+  #group2 {
+    width: 50%;
+    height: 50%;
+    float: left;
+  }
+  #d2 {
+    height: 50%;
+  }
+  #d3 {
+    width: 50%;
+    height: 50%;
+    float: left;
+  }
+  #d4 {
+    width: 50%;
+    height: 50%;
+    float: left;
+  }
+
+  #group3 {
+    width: 30%;
+    height: 50%;
+    float: left;
+  }
+  #d5 {
+    height: 50%;
+  }
+
+  #d6 {
+    height: 50%;
+  }
+
+  #group4 {
+    width: 50%;
+    height: 50%;
+    float: left;
+  }
+  #d7 {
+    width: 100%;
+    height: 100%;
+  }
+
+  #group5 {
+    width: 20%;
+    height: 50%;
+    float: left;
+  }
+  #d8 {
+    height: 50%;
+  }
+  #d9 {
+    height: 50%;
+  }
+}
+
+
+/* ===== MOBILE VIEW ===== */
+@media screen and (max-width: 599px) {
+  #group1 {
+    height: 10%;
+  }
+
+  #group2 {
+    background-color: pink;
+    height: 20%;
+    width: 100%;
+  }
+  #d2 {
+    width: 100%;
+    height: 50%;
+    display: inline-block;
+  }
+  #d3 {
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+  }
+  #d4 {
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+  }
+
+  #group3 {
+    height: 20%;
+    width: 50%;
+    display: inline-block;
+  }
+  #d5 {
+    height: 50%;
+  }
+  #d6 {
+    height: 50%;
+  }
+
+  #group4 {
+    height: 10%;
+  }
+
+  #group5 {
+    height: 20%;
+    width: 50%;
+    display: inline-block;
+  }
+  #d8 {
+    height: 50%;
+  }
+  #d9 {
+    height: 50%;
+  }
+}
