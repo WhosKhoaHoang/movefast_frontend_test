@@ -1,19 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import MediaQuery from "react-responsive";
+import { createGroup, createGroupDiv } from "./utils.js";
 import "./index.css";
 
 
-//TODO: Refactor for DRYness
-
-function test() {
-  let lst = [ <h1>YO#1</h1>, <h1>YO#2</h1>]
-  return (
-    <div>
-        {lst.map((value) => { return value })}
-    </div>
-  );
-}
 
 class Main extends React.Component {
   //minWidth MQ == for desktop
@@ -40,13 +31,7 @@ class Main extends React.Component {
 
 class Group1 extends React.Component {
   render() {
-    return (
-      <div id="group1">
-        <div id="d1" class="fill_own_group">
-          <span class="center_text">1</span>
-        </div>
-      </div>
-    );
+    return createGroup(1, [{ "dNum": 1, "classNames": "fill_own_group" }])
   }
 }
 
@@ -58,26 +43,14 @@ class Group2 extends React.Component {
     return (
       <div id="group2">
         <MediaQuery minWidth={600}>
-          <div id="d2">
-            <span class="center_text">2</span>
-          </div>
-          <div id="d3">
-            <span class="center_text">3</span>
-          </div>
-          <div id="d4">
-            <span class="center_text">4</span>
-          </div>
+          { createGroupDiv(2, {"dNum": 2 }) }
+          { createGroupDiv(2, {"dNum": 3 }) }
+          { createGroupDiv(2, {"dNum": 4 }) }
         </MediaQuery>
         <MediaQuery maxWidth={599}>
-          <div id="d3">
-            <span class="center_text">3</span>
-          </div>
-          <div id="d4">
-            <span class="center_text">4</span>
-          </div>
-          <div id="d2">
-            <span class="center_text">2</span>
-          </div>
+        { createGroupDiv(2, {"dNum": 3 }) }
+        { createGroupDiv(2, {"dNum": 4 }) }
+        { createGroupDiv(2, {"dNum": 2 }) }
         </MediaQuery>
       </div>
     );
@@ -87,45 +60,21 @@ class Group2 extends React.Component {
 
 class Group3 extends React.Component {
   render() {
-    return (
-      <div id="group3">
-          <div id="d5">
-            <span class="center_text">5</span>
-          </div>
-          <div id="d6">
-            <span class="center_text">6</span>
-          </div>
-      </div>
-    );
+    return createGroup(3, [{ "dNum": 5 }, {"dNum": 6 }]);
   }
 }
 
 
 class Group4 extends React.Component {
   render() {
-    return (
-      <div id="group4">
-        <div id="d7" class="fill_own_group">
-            <span class="center_text">7</span>
-        </div>
-      </div>
-    );
+    return createGroup(4, [ { "dNum": 7, "classNames": "fill_own_group" }])
   }
 }
 
 
 class Group5 extends React.Component {
   render() {
-    return (
-      <div id="group5">
-        <div id="d8">
-          <span class="center_text">8</span>
-        </div>
-        <div id="d9">
-          <span class="center_text">9</span>
-        </div>
-      </div>
-    );
+    return createGroup(5, [{ "dNum": 8 }, {"dNum": 9 }]);
   }
 }
 
