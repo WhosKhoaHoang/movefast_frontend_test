@@ -31,7 +31,7 @@ class Main extends React.Component {
 
 class Group1 extends React.Component {
   render() {
-    return createGroup(1, [{ "dNum": 1, "classNames": "fill_own_group" }])
+    return createGroup(1, [{ "dNum": 1, "classNames": "fill_own_group bordify" }])
   }
 }
 
@@ -43,14 +43,14 @@ class Group2 extends React.Component {
     return (
       <div id="group2">
         <MediaQuery minWidth={601}>
-          { createGroupDiv(2, {"dNum": 2 }) }
-          { createGroupDiv(2, {"dNum": 3 }) }
-          { createGroupDiv(2, {"dNum": 4 }) }
+          { createGroupDiv(2, {"dNum": 2, "classNames": "bordify"}) }
+          { createGroupDiv(2, {"dNum": 3, "classNames": "bordify"}) }
+          { createGroupDiv(2, {"dNum": 4, "classNames": "bordify"}) }
         </MediaQuery>
         <MediaQuery maxWidth={600}>
-        { createGroupDiv(2, {"dNum": 3 }) }
-        { createGroupDiv(2, {"dNum": 4 }) }
-        { createGroupDiv(2, {"dNum": 2 }) }
+        { createGroupDiv(2, {"dNum": 3, "classNames": "bordify" }) }
+        { createGroupDiv(2, {"dNum": 4, "classNames": "bordify" }) }
+        { createGroupDiv(2, {"dNum": 2, "classNames": "bordify" }) }
         </MediaQuery>
       </div>
     );
@@ -60,21 +60,24 @@ class Group2 extends React.Component {
 
 class Group3 extends React.Component {
   render() {
-    return createGroup(3, [{ "dNum": 5 }, {"dNum": 6 }]);
+    return createGroup(3, [{ "dNum": 5, "classNames": "bordify"},
+                           { "dNum": 6, "classNames": "bordify"}]);
   }
 }
 
 
 class Group4 extends React.Component {
   render() {
-    return createGroup(4, [ { "dNum": 7, "classNames": "fill_own_group" }])
+    return createGroup(4, [ { "dNum": 7,
+                              "classNames": "fill_own_group bordify" }])
   }
 }
 
 
 class Group5 extends React.Component {
   render() {
-    return createGroup(5, [{ "dNum": 8 }, {"dNum": 9 }]);
+    return createGroup(5, [{ "dNum": 8, "classNames": "bordify"},
+                           {"dNum": 9, "classNames": "bordify"}]);
   }
 }
 
