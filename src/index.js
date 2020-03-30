@@ -14,11 +14,11 @@ class Main extends React.Component {
       <div>
         <Group1 />
         <Group2 />
-        <MediaQuery minWidth={600}>
+        <MediaQuery minWidth={601}>
           <Group3 />
           <Group4 />
         </MediaQuery>
-        <MediaQuery maxWidth={599}>
+        <MediaQuery maxWidth={600}>
           <Group4 />
           <Group3 />
         </MediaQuery>
@@ -42,12 +42,12 @@ class Group2 extends React.Component {
   render() {
     return (
       <div id="group2">
-        <MediaQuery minWidth={600}>
+        <MediaQuery minWidth={601}>
           { createGroupDiv(2, {"dNum": 2 }) }
           { createGroupDiv(2, {"dNum": 3 }) }
           { createGroupDiv(2, {"dNum": 4 }) }
         </MediaQuery>
-        <MediaQuery maxWidth={599}>
+        <MediaQuery maxWidth={600}>
         { createGroupDiv(2, {"dNum": 3 }) }
         { createGroupDiv(2, {"dNum": 4 }) }
         { createGroupDiv(2, {"dNum": 2 }) }
